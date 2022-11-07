@@ -6,7 +6,7 @@ function onScanSuccess(decodedText, decodedResult) {
         ++countResults;
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
-        console.log(`Scan result ${decodedText}`, decodedResult);
+        // console.log(`Scan result ${decodedText}`, decodedResult);
         return {
             success: () => {
                 this.decodedText != null ? true : false;

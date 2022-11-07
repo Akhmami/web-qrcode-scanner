@@ -65,10 +65,7 @@
                             <div id="qr-reader" class="max-w-sm"></div>
 
                             <!-- Result -->
-                            <div x-data="onScanSuccess()">
-                                <template x-if="success">
-                                    <h3 x-text="decodedText"></h3>
-                                </template>
+                            <div x-data="console.log(onScanSuccess)">
                             </div>
 
                         </div>
