@@ -7,12 +7,7 @@ function onScanSuccess(decodedText, decodedResult) {
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
         // console.log(`Scan result ${decodedText}`, decodedResult);
-        return {
-            success: () => {
-                this.decodedText != null ? true : false;
-            },
-            data: decodedResult
-        };
+        return lastResult;
     }
 }
 
