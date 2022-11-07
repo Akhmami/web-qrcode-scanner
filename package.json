@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "html5-qrcode": "^2.2.8",
+    "tailwindcss": "^3.2.2"
+  }
+}
