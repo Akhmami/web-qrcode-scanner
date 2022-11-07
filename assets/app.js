@@ -7,7 +7,7 @@ function onScanSuccess(decodedText, decodedResult) {
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
         console.log(`Scan result ${decodedText}`, decodedResult);
-        resultContainer = decodedText;
+        document.getElementById('qr-reader-results').innerHTML = decodedText;
     }
 }
 
