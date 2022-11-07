@@ -1,4 +1,4 @@
-var resultContainer = document.getElementById('qr-reader-results');
+var resultContainer = document.getElementById('qr-reader-results').innerHTML;
 var lastResult, countResults = 0;
 
 function onScanSuccess(decodedText, decodedResult) {
@@ -7,7 +7,7 @@ function onScanSuccess(decodedText, decodedResult) {
         lastResult = decodedText;
         // Handle on success condition with the decoded message.
         // console.log(`Scan result ${decodedText}`, decodedResult);
-        return lastResult;
+        resultContainer = result.decodedText;
     }
 }
 
