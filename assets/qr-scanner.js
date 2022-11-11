@@ -17,7 +17,7 @@ qrcode.callback = res => {
 
         const arr = res.split('&');
         console.log(arr);
-        if (arr.length != 2) {
+        if (arr.length == 2) {
             var formdata = new FormData();
             formdata.append("no_pendaftaran", arr[0]);
             formdata.append("jenjang", arr[1]);
