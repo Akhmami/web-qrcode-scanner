@@ -12,7 +12,7 @@ let scanning = false;
 
 qrcode.callback = res => {
     if (res) {
-        outputData.innerText = res;
+        // outputData.innerText = res;
         scanning = false;
 
         const arr = res.split('&');
