@@ -17,9 +17,6 @@ qrcode.callback = res => {
 
         const arr = res.split('&');
         if (arr.length != 2) {
-            outputData.innerText = 'Oops... jangan iseng';
-            setTimeout(() => qrResult.hidden = true, 8000)
-        } else {
             var formdata = new FormData();
             formdata.append("no_pendaftaran", arr[0]);
             formdata.append("jenjang", arr[1]);
@@ -42,6 +39,9 @@ qrcode.callback = res => {
                     }
                 })
                 .catch(error => console.log('error', error));
+        } else {
+            outputData.innerText = 'Oops... jangan iseng';
+            setTimeout(() => qrResult.hidden = true, 8000)
         }
 
         video.srcObject.getTracks().forEach(track => {
