@@ -18,30 +18,30 @@ qrcode.callback = res => {
         const arr = res.split('&');
         if (arr.length != 2) {
             outputData.innerText = 'Oops... jangan iseng';
+        } else {
+            var formdata = new FormData();
+            formdata.append("no_pendaftaran", arr[0]);
+            formdata.append("jenjang", arr[1]);
+
+            var requestOptions = {
+                method: 'POST',
+                body: formdata,
+                redirect: 'follow'
+            };
+
+            fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
+                .then(response => response.json())
+                .then(function (result) {
+                    console.log(result);
+                    if (result.success) {
+                        outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
+                        setTimeout(() => qrResult.hidden = true, 8000)
+                    } else {
+                        outputData.innerText = result.message;
+                    }
+                })
+                .catch(error => console.log('error', error));
         }
-
-        var formdata = new FormData();
-        formdata.append("no_pendaftaran", arr[0]);
-        formdata.append("jenjang", arr[1]);
-
-        var requestOptions = {
-            method: 'POST',
-            body: formdata,
-            redirect: 'follow'
-        };
-
-        fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
-            .then(response => response.json())
-            .then(function (result) {
-                console.log(result);
-                if (result.success) {
-                    outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
-                    setTimeout(() => qrResult.hidden = true, 8000)
-                } else {
-                    outputData.innerText = result.message;
-                }
-            })
-            .catch(error => console.log('error', error));
 
         video.srcObject.getTracks().forEach(track => {
             track.stop();
