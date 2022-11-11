@@ -1,6 +1,31 @@
 {
   "devDependencies": {
-    "html5-qrcode": "^2.2.8",
     "tailwindcss": "^3.2.2"
-  }
+  },
+  "dependencies": {
+    "alpinejs": "^3.10.5",
+    "esbuild": "^0.15.13",
+    "html5-qrcode": "^2.2.8",
+    "qr-scanner": "^1.4.1"
+  },
+  "name": "qrc_scanner",
+  "version": "1.0.0",
+  "description": "QR Code Scanner app",
+  "main": "src/app.js",
+  "scripts": {
+    "build": "npm run build-css && npm run build-js",
+    "build-css": "tailwindcss -i ./src/app.css -o ./assets/app.css -m",
+    "build-js": "npx esbuild ./src/app.js --outfile=./assets/app.js --bundle --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhmami/web-qrcode-scanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akhmami/web-qrcode-scanner/issues"
+  },
+  "homepage": "https://github.com/Akhmami/web-qrcode-scanner#readme"
 }
