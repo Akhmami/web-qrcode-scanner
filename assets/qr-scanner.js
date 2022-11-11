@@ -36,6 +36,7 @@ qrcode.callback = res => {
                         setTimeout(() => qrResult.hidden = true, 8000)
                     } else {
                         outputData.innerText = result.message;
+                        setTimeout(() => qrResult.hidden = true, 8000)
                     }
                 })
                 .catch(error => console.log('error', error));
