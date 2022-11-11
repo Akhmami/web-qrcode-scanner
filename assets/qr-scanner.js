@@ -16,6 +16,7 @@ qrcode.callback = res => {
         scanning = false;
 
         const arr = res.split('&');
+        console.log(arr);
         if (arr.length != 2) {
             var formdata = new FormData();
             formdata.append("no_pendaftaran", arr[0]);
