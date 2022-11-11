@@ -33,16 +33,16 @@ qrcode.callback = res => {
                     console.log(result);
                     if (result.success) {
                         outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
-                        setTimeout(() => qrResult.hidden = true, 8000)
+                        setTimeout(() => qrResult.hidden = true, 8000);
                     } else {
                         outputData.innerText = result.message;
-                        setTimeout(() => qrResult.hidden = true, 8000)
+                        setTimeout(() => qrResult.hidden = true, 8000);
                     }
                 })
                 .catch(error => console.log('error', error));
         } else {
             outputData.innerText = 'Oops... jangan iseng';
-            setTimeout(() => qrResult.hidden = true, 8000)
+            setTimeout(() => qrResult.hidden = true, 8000);
         }
 
         video.srcObject.getTracks().forEach(track => {
