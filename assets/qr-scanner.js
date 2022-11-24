@@ -13,7 +13,7 @@ let scanning = false;
 qrcode.callback = res => {
     if (res) {
         // outputData.innerText = res;
-        scanning = true; //set to true always showing
+        // scanning = false; //set to true always showing
         const arr = res.split('&');
 
         if (arr.length == 2) {
@@ -50,8 +50,14 @@ qrcode.callback = res => {
         });
 
         qrResult.hidden = false;
-        canvasElement.hidden = false; //set to true for hidden canvas
+        // canvasElement.hidden = true; //set to true for hidden canvas
         // btnScanQR.hidden = false;
+
+        video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+        video.srcObject = stream;
+        video.play();
+        tick();
+        scan();
     }
 };
 
