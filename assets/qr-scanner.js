@@ -50,7 +50,7 @@ qrcode.callback = res => {
         });
 
         qrResult.hidden = false;
-        canvasElement.hidden = true; //set to true for hidden canvas
+        canvasElement.hidden = false; //set to true for hidden canvas
         // btnScanQR.hidden = false;
     }
 };
