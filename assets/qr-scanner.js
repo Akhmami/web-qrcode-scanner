@@ -45,9 +45,9 @@ qrcode.callback = res => {
             setTimeout(() => qrResult.hidden = true, 8000);
         }
 
-        video.srcObject.getTracks().forEach(track => {
-            track.stop();
-        });
+        // video.srcObject.getTracks().forEach(track => {
+        //     track.stop();
+        // });
 
         qrResult.hidden = false;
         canvasElement.hidden = true;
