@@ -13,7 +13,7 @@ let scanning = false;
 qrcode.callback = res => {
     if (res) {
         // outputData.innerText = res;
-        scanning = false;
+        // scanning = false; //set to true always showing
         const arr = res.split('&');
 
         if (arr.length == 2) {
@@ -45,12 +45,12 @@ qrcode.callback = res => {
             setTimeout(() => qrResult.hidden = true, 8000);
         }
 
-        // video.srcObject.getTracks().forEach(track => {
-        //     track.stop();
-        // });
+        video.srcObject.getTracks().forEach(track => {
+            track.stop();
+        });
 
         qrResult.hidden = false;
-        canvasElement.hidden = false; //true for hide
+        // canvasElement.hidden = true;
         // btnScanQR.hidden = false;
     }
 };
