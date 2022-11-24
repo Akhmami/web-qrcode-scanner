@@ -45,19 +45,13 @@ qrcode.callback = res => {
             setTimeout(() => qrResult.hidden = true, 8000);
         }
 
-        video.srcObject.getTracks().forEach(track => {
-            track.stop();
-        });
+        // video.srcObject.getTracks().forEach(track => {
+        //     track.stop();
+        // });
 
         qrResult.hidden = false;
         // canvasElement.hidden = true; //set to true for hidden canvas
         // btnScanQR.hidden = false;
-
-        video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-        video.srcObject = stream;
-        video.play();
-        tick();
-        scan();
     }
 };
 
