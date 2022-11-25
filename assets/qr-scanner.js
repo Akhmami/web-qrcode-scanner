@@ -6,14 +6,14 @@ const canvas = canvasElement.getContext("2d");
 
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
-// const btnScanQR = document.getElementById("btn-scan-qr");
+const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
 
 qrcode.callback = res => {
     if (res) {
         // outputData.innerText = res;
-        scanning = true; //set to true always showing
+        scanning = false;
         const arr = res.split('&');
 
         if (arr.length == 2) {
@@ -45,31 +45,31 @@ qrcode.callback = res => {
             setTimeout(() => qrResult.hidden = true, 8000);
         }
 
-        // video.srcObject.getTracks().forEach(track => {
-        //     track.stop();
-        // });
+        video.srcObject.getTracks().forEach(track => {
+            track.stop();
+        });
 
         qrResult.hidden = false;
-        canvasElement.hidden = false; //set to true for hidden canvas
-        // btnScanQR.hidden = false;
+        canvasElement.hidden = true;
+        btnScanQR.hidden = false;
     }
 };
 
-// btnScanQR.onclick = () => {
-navigator.mediaDevices
-    .getUserMedia({ video: { facingMode: "environment" } })
-    .then(function (stream) {
-        scanning = true;
-        qrResult.hidden = true;
-        // btnScanQR.hidden = true;
-        canvasElement.hidden = false;
-        video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
-        video.srcObject = stream;
-        video.play();
-        tick();
-        scan();
-    });
-// };
+btnScanQR.onclick = () => {
+    navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: "environment" } })
+        .then(function (stream) {
+            scanning = true;
+            qrResult.hidden = true;
+            btnScanQR.hidden = true;
+            canvasElement.hidden = false;
+            video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+            video.srcObject = stream;
+            video.play();
+            tick();
+            scan();
+        });
+};
 
 function tick() {
     canvasElement.height = video.videoHeight;
