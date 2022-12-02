@@ -4,5 +4,9 @@ module.exports = {
   theme: {
     extend: {},
   },
+  safelist: [
+    'py-10',
+    'sm:py-16'
+  ],
   plugins: [],
 }
