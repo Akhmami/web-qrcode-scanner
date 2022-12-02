@@ -58,7 +58,7 @@
                     <div class="mx-auto text-center text-xl leading-normal text-gray-600">
                         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
                             <div>
-                                <div id="reader" width="600px" height="600px"></div>
+                                <div id="reader" width="600px" height="600px" style="transform: scaleX(-100%);"></div>
                             </div>
 
                             <div>
@@ -177,7 +177,7 @@
             qrResult.hidden = false;
         };
 
-        const config = { disableFlip: true, fps: 10, qrbox: { width: 250, height: 250 } };
+        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
         // If you want to prefer front camera
         html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
