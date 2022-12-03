@@ -7,7 +7,7 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
-const audioOk = new Audio('./assets/sound/dad-says-ok.mp3');
+const audioOk = new Audio('./assets/sound/ok.mp3');
 const audioErr = new Audio('./assets/sound/error-sound.mp3');
 
 let scanning = false;
