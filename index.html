@@ -158,10 +158,6 @@
                         } else {
                             outputData.innerText = result.message;
                             audioErr.play();
-                            setTimeout(function () {
-                                qrResult.hidden = true;
-                                outputData.innerText = '';
-                            }, 8000);
                         }
                     })
                     .catch(error => console.log('error', error));
