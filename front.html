@@ -147,7 +147,6 @@
                 await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
                     .then(response => response.json())
                     .then(function (result) {
-                        console.log(result);
                         if (result.success) {
                             outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
                             audioOk.play();
@@ -156,6 +155,7 @@
                                 outputData.innerText = '';
                             }, 10000);
                         } else {
+                            console.log(result);
                             outputData.innerText = result.message;
                             audioErr.play();
                             setTimeout(function () {
