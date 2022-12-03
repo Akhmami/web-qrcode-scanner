@@ -146,7 +146,7 @@
                     redirect: 'follow'
                 };
 
-                if (oldScan != decodedText) {
+                if (oldScan == decodedText) {
                     audioScanned.play();
                     console.log('sudah scan');
                     return;
