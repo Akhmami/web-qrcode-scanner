@@ -150,6 +150,7 @@
                         if (result.success) {
                             outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
                             audioOk.play();
+                            html5QrCode.clear();
                             // setTimeout(function () {
                             //     qrResult.hidden = true;
                             //     outputData.innerText = '';
@@ -181,7 +182,6 @@
 
         // If you want to prefer front camera
         html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback);
-        html5QrCode.clear();
     </script>
 </body>
 
