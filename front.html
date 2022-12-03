@@ -153,7 +153,7 @@
                             if (result.success) {
                                 outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
                                 audioOk.play();
-                                // html5QrCode.clear();
+                                oldScan = decodedText;
                                 // setTimeout(function () {
                                 //     qrResult.hidden = true;
                                 //     outputData.innerText = '';
@@ -170,8 +170,6 @@
                         })
                         .catch(error => console.log('error', error));
                 }
-
-                oldScan = decodedText;
             } else {
                 outputData.innerText = 'Oops... jangan iseng';
                 audioErr.play();
