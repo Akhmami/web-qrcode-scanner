@@ -144,7 +144,7 @@
                     redirect: 'follow'
                 };
 
-                const fetRes = async () => await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
+                async () => await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
                     .then(response => response.json())
                     .then(function (result) {
                         console.log(result);
