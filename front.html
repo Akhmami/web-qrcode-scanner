@@ -150,7 +150,6 @@
                         if (result.success) {
                             outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
                             audioOk.play();
-                            html5QrCode.clear();
                             // setTimeout(function () {
                             //     qrResult.hidden = true;
                             //     outputData.innerText = '';
@@ -176,6 +175,7 @@
             }
 
             qrResult.hidden = false;
+            html5QrCode.clear();
         };
 
         const config = { fps: 10, qrbox: { width: 250, height: 250 } };
