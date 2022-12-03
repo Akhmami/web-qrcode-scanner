@@ -7,6 +7,8 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
+const audioOk = new Audio('./assets/sound/dad-says-ok.mp3');
+const audioErr = new Audio('./assets/sound/error-sound.mp3');
 
 let scanning = false;
 
@@ -33,15 +35,18 @@ qrcode.callback = res => {
                     console.log(result);
                     if (result.success) {
                         outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
+                        audioOk.play();
                         setTimeout(() => qrResult.hidden = true, 8000);
                     } else {
                         outputData.innerText = result.message;
+                        audioErr.play();
                         setTimeout(() => qrResult.hidden = true, 8000);
                     }
                 })
                 .catch(error => console.log('error', error));
         } else {
             outputData.innerText = 'Oops... jangan iseng';
+            audioErr.play();
             setTimeout(() => qrResult.hidden = true, 8000);
         }
 
