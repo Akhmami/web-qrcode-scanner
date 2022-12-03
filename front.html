@@ -129,7 +129,7 @@
         const audioOk = new Audio('./assets/sound/dad-says-ok.mp3');
         const audioErr = new Audio('./assets/sound/error-sound.mp3');
 
-        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+        const qrCodeSuccessCallback = async (decodedText, decodedResult) => {
             console.log(`Code matched = ${decodedText}`);
             const arr = decodedText.split('&');
 
@@ -144,7 +144,7 @@
                     redirect: 'follow'
                 };
 
-                async () => await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
+                await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
                     .then(response => response.json())
                     .then(function (result) {
                         console.log(result);
