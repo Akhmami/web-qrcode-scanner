@@ -150,10 +150,10 @@
                         if (result.success) {
                             outputData.innerHTML = `No. Antrian <strong>${result.data.no_antrian}</strong>`;
                             audioOk.play();
-                            setTimeout(function () {
-                                qrResult.hidden = true;
-                                outputData.innerText = '';
-                            }, 10000);
+                            // setTimeout(function () {
+                            //     qrResult.hidden = true;
+                            //     outputData.innerText = '';
+                            // }, 10000);
                         } else {
                             console.log(result);
                             outputData.innerText = result.message;
