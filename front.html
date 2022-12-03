@@ -171,8 +171,9 @@
                         })
                         .catch(error => console.log('error', error));
                 } else {
-                    audioScanned.play();
-                    console.log('sudah scan');
+                    setTimeout(function () {
+                        audioScanned.play();
+                    }, 5000);
                 }
             } else {
                 outputData.innerText = 'Oops... jangan iseng';
