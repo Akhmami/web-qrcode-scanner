@@ -131,7 +131,7 @@
         const audioErr = new Audio('./assets/sound/error-sound.mp3');
         let oldScan = '';
 
-        const qrCodeSuccessCallback = async (decodedText, decodedResult) => {
+        const qrCodeSuccessCallback = (decodedText, decodedResult) => {
             // console.log(`Code matched = ${decodedText}`);
             const arr = decodedText.split('&');
 
@@ -148,7 +148,7 @@
 
                 if (oldScan != decodedText) {
                     console.log('lolos');
-                    await fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
+                    fetch("https://w.nfbsnet.id/api/v1/antrian", requestOptions)
                         .then(response => response.json())
                         .then(function (result) {
                             if (result.success) {
